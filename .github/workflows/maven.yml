@@ -14,7 +14,7 @@ on:
   pull_request:
     branches: [ "master" ]
   schedule:
-    - cron: 15 5 * * *
+    - cron: 35 5 * * *
     - cron: 30 3 * * *
 
 jobs:
@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v4.6.0
       with:
         name: Logs
-        path: src/test/resources/
+        path: logs/
