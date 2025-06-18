@@ -15,7 +15,7 @@ public class BaseService { // wrapper class for Rest Assured because
     * Handling Response
     */
 
-    private static final String BASE_URL = "http://64.227.160.186:8080"; // constant should contain final keyword and all final variables should be static
+    private static final String BASE_URL = URL; // constant should contain final keyword and all final variables should be static
 
     private RequestSpecification requestSpecification; // created an instance variable of RequestSpecification Interface [objects cannot be created for Interfaces]
 
