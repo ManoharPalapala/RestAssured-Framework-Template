@@ -2,11 +2,11 @@ package base.services;
 
 
 import filters.TestFilter;
+
+import static io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
-import static io.restassured.RestAssured.*;
 
 public class BaseService { // wrapper class for Rest Assured because
     /*
@@ -15,7 +15,7 @@ public class BaseService { // wrapper class for Rest Assured because
     * Handling Response
     */
 
-    private static final String BASE_URL = URL; // constant should contain final keyword and all final variables should be static
+    private static final String BASE_URL = ""; // constant should contain final keyword and all final variables should be static
 
     private RequestSpecification requestSpecification; // created an instance variable of RequestSpecification Interface [objects cannot be created for Interfaces]
 
@@ -34,6 +34,8 @@ public class BaseService { // wrapper class for Rest Assured because
     protected Response postRequest(Object payload, String endpoint){
        return  requestSpecification.contentType(ContentType.JSON).body(payload).post(endpoint);
     }
+
+    // method overloading for 3rd party URL
     protected Response postRequest(String URL,Object payload, String endpoint){
         return  requestSpecification.baseUri(URL).contentType(ContentType.JSON).body(payload).post(endpoint);
     }

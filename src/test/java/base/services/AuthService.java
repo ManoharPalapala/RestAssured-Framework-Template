@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class AuthService extends BaseService {
 
-   private static final String BASE_PATH = "/api/auth/";
+   private static final String BASE_PATH = "/folder path/";
 
    public Response login(LoginRequest payload){
        return postRequest(payload,BASE_PATH +"login");
